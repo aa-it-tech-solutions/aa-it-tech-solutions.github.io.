@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AA IT Services | Global Support & Digital Solutions</title>
+  <meta name="description" content="AA IT Services - Professional IT support, web development, and remote troubleshooting by Ahamed Shariff. 5+ years experience." />
+  <style>
+    /* Professional Color Palette & Global Reset */
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --primary: #00d2ff;
+      --secondary: #3a7bd5;
+      --dark: #06142e;
+      --light: #f7f9fc;
+      --glass: rgba(255, 255, 255, 0.05);
+    }
+
+    body { 
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+      color: #ffffff; 
+      background: var(--dark); 
+      line-height: 1.6; 
+      overflow-x: hidden;
+    }
+
+    /* Modern Technical Background Design */
+    .bg-animation {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: radial-gradient(circle at 50% 50%, #123c69 0%, #06142e 100%);
+      z-index: -1;
+    }
+    .bg-grid {
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-image: linear-gradient(rgba(0, 210, 255, 0.05) 1px, transparent 1px), 
+                        linear-gradient(90deg, rgba(0, 210, 255, 0.05) 1px, transparent 1px);
+      background-size: 50px 50px;
+      z-index: -1;
+    }
+
+    a { text-decoration: none; transition: 0.3s; }
+    
+    /* Header & Navigation */
+    .topbar { 
+      background: rgba(6, 20, 46, 0.8); 
+      backdrop-filter: blur(10px);
+      padding: 15px 7%; 
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      position: sticky; top: 0; z-index: 1000;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .brand { font-weight: 800; font-size: 24px; color: var(--primary); letter-spacing: 1px; }
+    .nav a { color: white; margin-left: 20px; font-size: 15px; font-weight: 500; }
+    .nav a:hover { color: var(--primary); }
+
+    /* Hero Section */
+    .hero { padding: 100px 7%; display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 50px; align-items: center; }
+    .badge { display: inline-block; background: rgba(0, 210, 255, 0.15); border: 1px solid var(--primary); color: var(--primary); padding: 6px 16px; border-radius: 999px; margin-bottom: 20px; font-size: 14px; font-weight: bold; }
+    h1 { font-size: 56px; line-height: 1.1; margin-bottom: 25px; }
+    .hero p { font-size: 19px; color: #cbd5e1; margin-bottom: 35px; max-width: 600px; }
+    
+    .buttons { display: flex; gap: 15px; flex-wrap: wrap; }
+    .btn { padding: 16px 28px; border-radius: 8px; font-weight: 700; display: inline-block; text-align: center; cursor: pointer; border: none; font-size: 16px;}
+    .btn-primary { background: var(--primary); color: var(--dark); }
+    .btn-primary:hover { background: #fff; transform: translateY(-3px); }
+    .btn-secondary { background: transparent; border: 2px solid white; color: white; }
+    .btn-secondary:hover { background: rgba(255,255,255,0.1); }
+
+    /* Cards & Glassmorphism */
+    .hero-card { 
+      background: var(--glass); 
+      backdrop-filter: blur(15px);
+      padding: 35px; border-radius: 24px; 
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.3); 
+    }
+    .stat { background: rgba(255,255,255,0.05); padding: 20px; border-radius: 16px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
+    .stat strong { display: block; font-size: 28px; color: var(--primary); }
+
+    /* Sections */
+    section { padding: 90px 7%; }
+    .section-title { text-align: center; margin-bottom: 50px; }
+    .section-title h2 { font-size: 40px; margin-bottom: 15px; color: var(--primary); }
+    
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+    .card { 
+      background: var(--glass); 
+      padding: 35px; border-radius: 20px; 
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: 0.4s;
+    }
+    .card:hover { transform: translateY(-10px); border-color: var(--primary); }
+    .card h3 { margin-bottom: 15px; color: var(--primary); }
+    .card p { color: #aab7cf; }
+
+    /* Ticket Form */
+    .ticket-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    form { background: white; padding: 40px; border-radius: 24px; color: var(--dark); }
+    label { font-weight: 700; font-size: 14px; display: block; margin: 15px 0 5px; }
+    input, select, textarea { width: 100%; padding: 14px; border: 1px solid #ddd; border-radius: 10px; background: #f9f9f9; }
+    
+    .footer { padding: 40px 7%; background: #030b18; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: #667085; }
+
+    @media (max-width: 900px) { .hero, .ticket-wrap { grid-template-columns: 1fr; } h1 { font-size: 40px; } }
+  </style>
+</head>
+<body>
+  <div class="bg-animation"></div>
+  <div class="bg-grid"></div>
+
+  <header class="topbar">
+    <div class="brand">AA IT SERVICES</div>
+    <nav class="nav">
+      <a href="#services">Services</a>
+      <a href="#ticket">Raise Ticket</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <span class="badge">PRO IT CONSULTANT • 5 YEARS EXP</span>
+        <h1>Scale Your Business with Expert IT Support</h1>
+        <p>Providing high-performance technical solutions for international clients. From web development to advanced systems troubleshooting.</p>
+        <div class="buttons">
+          <a class="btn btn-primary" id="whatsappHero" href="#">Get Started - WhatsApp</a>
+          <a class="btn btn-secondary" id="emailHero" href="#">Consult by Email</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h3>Operational Excellence</h3>
+        <div class="stats">
+          <div class="stat"><strong>5+</strong> Years Exp</div>
+          <div class="stat"><strong>24/7</strong> Support</div>
+          <div class="stat"><strong>100%</strong> Remote</div>
+          <div class="stat"><strong>Global</strong> Reach</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="section-title">
+        <h2>Our Specialized Services</h2>
+        <p>Premium IT solutions tailored for the global market.</p>
+      </div>
+      <div class="grid">
+        <div class="card"><h3>Cloud & Support</h3><p>End-to-end remote infrastructure support and troubleshooting.</p></div>
+        <div class="card"><h3>Web Architecture</h3><p>Building scalable, SEO-optimized business websites and portals.</p></div>
+        <div class="card"><h3>System Automation</h3><p>Custom workflows using Google Cloud, API integrations, and scripts.</p></div>
+      </div>
+    </section>
+
+    <section id="ticket">
+      <div class="section-title">
+        <h2>Submit a Service Request</h2>
+        <p>Create a support ticket and I will reach out within 2 hours.</p>
+      </div>
+      <div class="ticket-wrap">
+        <div class="card">
+          <h3>Client Support Portal</h3>
+          <p>Please provide clear details of your technical requirement to ensure the fastest resolution.</p>
+          <br>
+          <p><strong>Note:</strong> Emergency critical tickets are prioritized for immediate response.</p>
+        </div>
+        <form id="ticketForm">
+          <label>Your Name</label>
+          <input id="name" required placeholder="John Doe" />
+          <label>Email</label>
+          <input id="clientEmail" type="email" required placeholder="john@company.com" />
+          <label>Service Category</label>
+          <select id="service">
+            <option>Web Development</option>
+            <option>IT Support & Troubleshooting</option>
+            <option>Business Automation</option>
+            <option>Other</option>
+          </select>
+          <label>Requirement Details</label>
+          <textarea id="details" required placeholder="Describe your project or issue..."></textarea>
+          <button class="btn btn-primary" type="submit" style="width: 100%; margin-top: 20px;">Open Ticket via WhatsApp</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    © 2026 AA IT Services | Ahamed Shariff | All Rights Reserved.
+  </footer>
+
+  <script>
+    const YOUR_WHATSAPP_NUMBER = "919916595388"; 
+    const YOUR_EMAIL = "ahamedshariff786klr@gmail.com";
+
+    // Dynamic WhatsApp Links
+    document.querySelectorAll('#whatsappHero').forEach(link => {
+      link.href = `https://wa.me/${YOUR_WHATSAPP_NUMBER}?text=${encodeURIComponent('Hello AA IT Services, I am interested in your professional services.')}`;
+    });
+
+    document.getElementById('ticketForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const ticketId = 'AA-' + Math.floor(Math.random() * 10000);
+      const name = document.getElementById('name').value;
+      const service = document.getElementById('service').value;
+      const details = document.getElementById('details').value;
+      
+      const message = `*NEW TICKET: ${ticketId}*\n*Name:* ${name}\n*Service:* ${service}\n*Details:* ${details}`;
+      window.open(`https://wa.me/${YOUR_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+    });
+  </script>
+</body>
+</html>
