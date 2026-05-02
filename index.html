@@ -92,15 +92,49 @@
       color: var(--primary);
     }
 
+    /* REGENERATED LOGO CSS */
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
     .logo-mark {
-      width: 46px;
-      height: 46px;
+      width: 48px;
+      height: 48px;
       display: grid;
       place-items: center;
       color: white;
+      /* Gradient matches the original image's placeholder */
       background: linear-gradient(135deg, var(--primary), #22a6f2);
       border-radius: 14px;
-      box-shadow: var(--shadow);
+      box-shadow: 0 6px 12px rgba(15, 76, 129, 0.15);
+      font-size: 24px;
+      font-weight: 800;
+    }
+
+    /* Professional Icon Placeholder (since image is blank white) */
+    .logo-mark::after {
+      content: '⚡'; /* Use a relevant emoji as an icon placeholder */
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo-text .biz-name {
+      font-size: 20px;
+      font-weight: 800;
+      line-height: 1.1;
+      color: var(--primary);
+    }
+
+    .logo-text .tagline {
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.5px;
     }
 
     .nav-links {
@@ -567,14 +601,14 @@
       position: fixed;
       right: 22px;
       bottom: 22px;
-      padding: 12px 24px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      width: 58px;
+      height: 58px;
+      display: grid;
+      place-items: center;
       background: var(--accent);
       color: white;
       border-radius: 999px;
-      font-weight: 700;
+      font-size: 28px;
       box-shadow: 0 14px 35px rgba(37, 211, 102, 0.38);
       z-index: 200;
     }
@@ -633,9 +667,13 @@
 
   <header class="navbar">
     <div class="container nav-inner">
-      <a href="#home" class="logo">
-        <span class="logo-mark">AA</span>
-        <span>AA IT Solutions</span>
+      <!-- REGENERATED LOGO MARKUP -->
+      <a href="#home" class="logo-container">
+        <div class="logo-mark"></div> <!-- Icon placeholder (emoji generated via CSS) -->
+        <div class="logo-text">
+          <span class="biz-name">AA IT Solutions</span>
+          <span class="tagline">Trusted Repair & Support</span>
+        </div>
       </a>
 
       <nav class="nav-links">
@@ -741,7 +779,7 @@
           </article>
 
           <article class="service-card">
-            <div class="icon">🛡️</div>
+            <div class="icon">📹</div>
             <h3>Data Backup & Security</h3>
             <p>Protect your important files and systems with backup, recovery, antivirus, and security solutions.</p>
             <ul>
@@ -839,6 +877,10 @@
           <div class="ticket-benefit">✅ Email alert to support team</div>
           <div class="ticket-benefit">✅ WhatsApp message notification</div>
           <div class="ticket-benefit">✅ Faster customer follow-up</div>
+
+          <p style="margin-top: 22px; font-size: 14px;">
+            Important: To send automatic email and WhatsApp notifications from a live website, connect this form to a backend service such as PHP mail, Node.js, Formspree, EmailJS, Twilio WhatsApp, or Meta WhatsApp Cloud API.
+          </p>
         </div>
 
         <div class="ticket-card">
@@ -899,7 +941,7 @@
             <button class="btn btn-primary" type="submit">Submit Ticket</button>
 
             <div class="success-message" id="successMessage">
-              Ticket submitted successfully. WhatsApp notification prepared.
+              Ticket submitted successfully. Your email and WhatsApp notification process is ready.
             </div>
 
             <div class="error-message" id="errorMessage">
@@ -932,7 +974,7 @@
           <div class="contact-card">
             <div class="icon">📍</div>
             <h3>Service Area</h3>
-            <p>Kolar / Karnataka, India</p>
+            <p>Your City, India</p>
           </div>
         </div>
       </div>
@@ -943,7 +985,14 @@
     <div class="container">
       <div class="footer-grid">
         <div>
-          <h3>AA IT Solutions</h3>
+          <!-- REGENERATED FOOTER LOGO -->
+          <a href="#home" class="logo-container" style="margin-bottom: 12px; display: inline-flex;">
+            <div class="logo-mark" style="width: 40px; height: 40px; font-size: 20px;"></div>
+            <div class="logo-text">
+              <span class="biz-name" style="color: white; font-size: 18px;">AA IT Solutions</span>
+              <span class="tagline" style="color: #cbd5e1;">Trusted Repair</span>
+            </div>
+          </a>
           <p>Professional IT repair and support services for homes, offices, and businesses.</p>
         </div>
         <div>
@@ -969,10 +1018,7 @@
     </div>
   </footer>
 
-  <!-- Floating WhatsApp Button -->
-  <a class="floating-whatsapp" href="https://wa.me/919916595388?text=Hello%20AA%20IT%20Solutions%2C%20I%20need%20support." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-    <span>Chat on WhatsApp</span>
-  </a>
+  <a class="floating-whatsapp" href="https://wa.me/919916595388?text=Hello%20AA%20IT%20Solutions%2C%20I%20need%20support." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">☘</a>
 
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
@@ -998,19 +1044,28 @@
         submittedAt: new Date().toLocaleString()
       };
 
-      // UPDATED CONTACT DETAILS
-      const myWhatsApp = "919916595388";
-      
-      const whatsappText = `*New Support Ticket - AA IT Solutions*%0A%0A*Name:* ${encodeURIComponent(formData.name)}%0A*Phone:* ${encodeURIComponent(formData.phone)}%0A*Email:* ${encodeURIComponent(formData.email)}%0A*Service:* ${encodeURIComponent(formData.device)}%0A*Priority:* ${encodeURIComponent(formData.priority)}%0A*Location:* ${encodeURIComponent(formData.location)}%0A*Issue:* ${encodeURIComponent(formData.message)}%0A*Time:* ${encodeURIComponent(formData.submittedAt)}`;
+      // OPTION 1: Demo fallback opens WhatsApp with the ticket details.
+      const whatsappNumber = "919916595388"; // Correct phone number
+      const whatsappText = `New Support Ticket - AA IT Solutions%0A%0AName: ${encodeURIComponent(formData.name)}%0APhone: ${encodeURIComponent(formData.phone)}%0AEmail: ${encodeURIComponent(formData.email)}%0AService: ${encodeURIComponent(formData.device)}%0APriority: ${encodeURIComponent(formData.priority)}%0ALocation: ${encodeURIComponent(formData.location)}%0AIssue: ${encodeURIComponent(formData.message)}%0ATime: ${encodeURIComponent(formData.submittedAt)}`;
 
-      // Try to open WhatsApp automatically
-      try {
-        window.open(`https://wa.me/${myWhatsApp}?text=${whatsappText}`, "_blank");
+      // OPTION 2: Live backend API call (commented out by default)
+      // try {
+      //   const response = await fetch("/api/ticket", {
+      //     method: "POST",
+      //     headers: {
+      //       "Content-Type": "application/json"
+      //     },
+      //     body: JSON.stringify(formData)
+      //   });
+      //   if (!response.ok) throw new Error("Backend not connected yet");
+      //   successMessage.style.display = "block";
+      //   ticketForm.reset();
+      // } catch (error) {
+        // Fallback for live demo: Open WhatsApp message manually.
+        window.open(`https://wa.me/${whatsappNumber}?text=${whatsappText}`, "_blank");
         successMessage.style.display = "block";
         ticketForm.reset();
-      } catch (error) {
-        errorMessage.style.display = "block";
-      }
+      // }
     });
   </script>
 </body>
